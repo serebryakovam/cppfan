@@ -25,12 +25,12 @@ void TestSum()
 	ASSERT_EQUAL(calc.Sum(-4, -9), -13);
 	ASSERT_EQUAL(calc.Sum(-9, -4), -13);
 	ASSERT_EQUAL(calc.Sum(8, 0), 8);
-	ASSERT_EQUAL(calc.Sum(0, 20), 0);
+	ASSERT_EQUAL(calc.Sum(0, 20), 20);
 	ASSERT_EQUAL(calc.Sum(-9, 0), -9);
 	ASSERT_EQUAL(calc.Sum(-20, 7), -13);
 	ASSERT_EQUAL(calc.Sum(50, -11), 39);
-	ASSERT_EQUAL(calc.Sum(1000000, 23456), 123456);
-	ASSERT_EQUAL(calc.Sum(-99999, 1000000), 1);
+	ASSERT_EQUAL(calc.Sum(100000, 23456), 123456);
+	ASSERT_EQUAL(calc.Sum(-99999, 100000), 1);
 	ASSERT_EQUAL(calc.Sum(3, -3), 0);
 		
 	if (fails_count == 0)
@@ -51,7 +51,7 @@ void TestDef()
 	int fails_count = 0;
 	Calculator calc;
 	ASSERT_EQUAL(calc.Def(10, 6), 4);
-	ASSERT_EQUAL(calc.Def(10, -9), 1);
+	ASSERT_EQUAL(calc.Def(10, -9), 19);
 	ASSERT_EQUAL(calc.Def(20, 50), -30);
 	ASSERT_EQUAL(calc.Def(-18, 1), -19);
 	ASSERT_EQUAL(calc.Def(-53, -20), -33);
@@ -60,7 +60,7 @@ void TestDef()
 	ASSERT_EQUAL(calc.Def(-2555, -2555), 0);
 	ASSERT_EQUAL(calc.Def(70, 0), 70);
 	ASSERT_EQUAL(calc.Def(1000000, 1000001), -1);
-	ASSERT_EQUAL(calc.Def(2000000, 1), 199999);
+	ASSERT_EQUAL(calc.Def(200000, 1), 199999);
 
 	if (fails_count == 0)
 	{
@@ -107,14 +107,13 @@ void TestDivision()
 	int fails_count = 0;
 	Calculator calc;
 	ASSERT_EQUAL(calc.Division(10, 2), 5);
-	ASSERT_EQUAL(calc.Division(-80, 4), 20);
-	ASSERT_EQUAL(calc.Division(100, -50), 2);
+	ASSERT_EQUAL(calc.Division(-80, 4), -20);
+	ASSERT_EQUAL(calc.Division(100, -50), -2);
 	ASSERT_EQUAL(calc.Division(-48, -4), 12);
 	ASSERT_EQUAL(calc.Division(45, 1), 45);
 	ASSERT_EQUAL(calc.Division(45, 45), 1);
 	ASSERT_EQUAL(calc.Division(0, 7), 0);
 	ASSERT_EQUAL(calc.Division(1, 3), 0);
-	ASSERT_EQUAL(calc.Division(5, 3), 2);
 	ASSERT_EQUAL(calc.Division(5, 0), 0);
 
 	if (fails_count == 0)
