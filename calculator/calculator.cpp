@@ -72,10 +72,9 @@ int Calculator::GCD(const int lhs, const int rhs)
 int Calculator::LCM(const int lhs, const int rhs)
 {
     int result = 0;
-	int lhs_copy = abs(lhs);
+    int lhs_copy = abs(lhs);
 	int rhs_copy = abs(rhs);
-    result = rhs_copy * lhs_copy / GCD(lhs_copy, rhs_copy);
-    return result;
+    return return rhs_copy * lhs_copy / GCD(lhs_copy, rhs_copy);
 }
 
 
