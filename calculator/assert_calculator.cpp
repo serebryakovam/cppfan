@@ -88,6 +88,7 @@ void TestMultiplicattion()
 	ASSERT_EQUAL(calc.Multiplicattion(0, 26), 0);
 	ASSERT_EQUAL(calc.Multiplicattion(178, 2255), 401390);
 	ASSERT_EQUAL(calc.Multiplicattion(-17800, 256), -4556800);
+	ASSERT_EQUAL(calc.Multiplicattion(44721, 44721), 1999967841);
 
 	if (fails_count == 0)
 	{
@@ -222,6 +223,8 @@ void TestCheckSignEqual()
 	ASSERT_EQUAL(calc.CheckSignEqual(0, -5), 1);
 	ASSERT_EQUAL(calc.CheckSignEqual(7, 0), 1);
 	ASSERT_EQUAL(calc.CheckSignEqual(0, 0), 1);
+	ASSERT_EQUAL(calc.CheckSignEqual(17000000, 250000000), 1);
+	ASSERT_EQUAL(calc.CheckSignEqual(200000000, -65000000), 0); 
 
 	if (fails_count == 0)
 	{

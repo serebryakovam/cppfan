@@ -72,17 +72,16 @@ int Calculator::GCD(const int lhs, const int rhs)
 int Calculator::LCM(const int lhs, const int rhs)
 {
     int result = 0;
-    int lhs_copy = abs(lhs);
-	int rhs_copy = abs(rhs);
-    return return rhs_copy * lhs_copy / GCD(lhs_copy, rhs_copy);
+    result = abs(rhs / GCD(lhs, rhs) * lhs);
+    return result;
 }
 
 
 bool Calculator::CheckSignEqual(const int lhs, const int rhs)
 {
-    if (lhs == 0 || rhs == 0)
+    if ((lhs >= 0 && rhs >= 0) || (lhs <= 0 && rhs <= 0))
     {
         return 1;
     }
-    return (lhs * rhs) > 0;
+    return 0;
 }
