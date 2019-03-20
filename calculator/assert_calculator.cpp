@@ -169,6 +169,7 @@ void TestGCD()
 	ASSERT_EQUAL(calc.GCD(-154, -616), 154);
 	ASSERT_EQUAL(calc.GCD(7, 3), 1);
 	ASSERT_EQUAL(calc.GCD(60, 42), 6);
+	ASSERT_EQUAL(calc.GCD(1000000000, 1000000000), 1000000000);
 	
 	if (fails_count == 0)
 	{
@@ -196,6 +197,7 @@ void TestLCM()
 	ASSERT_EQUAL(calc.LCM(43, 47), 2021);
 	ASSERT_EQUAL(calc.LCM(43, 47), 2021);
 	ASSERT_EQUAL(calc.LCM(3517, 331), 1164127);
+	ASSERT_EQUAL(calc.LCM(1000000000, 100000000), 1000000000);
 	
 	if (fails_count == 0)
 	{
