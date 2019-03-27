@@ -6,7 +6,7 @@
 #include "HashTable.h"
 
  std::string TrimWord(const std::string& raw_word)
-    {
+{
     size_t begin_pos = 0;
     size_t word_length = raw_word.npos;
 
@@ -16,8 +16,8 @@
         {
             begin_pos = i;
             break;
-            }
         }
+    }
 
     for (size_t i = begin_pos; i < raw_word.size(); i++)
     {
