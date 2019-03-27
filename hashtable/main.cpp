@@ -41,7 +41,7 @@ int main()
     {
         hashtable1.Add(word);
     }
-    std::ofstream output_file("output.txt");
+    std::ofstream output_file("output6.txt");
     for (size_t i = 0; i < hashtable1.GetSize(); ++i)
     {
        output_file << hashtable1.GetData()[i].size() << std::endl;
