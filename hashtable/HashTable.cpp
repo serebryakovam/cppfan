@@ -23,10 +23,10 @@ int HashTable::GetHash4(const std::string& value)
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
     {
-    hash += value[i];
+        hash += value[i];
     }
     return hash;
-    }
+}
 
 int HashTable::GetHash5(const std::string& value)
 {
@@ -54,7 +54,7 @@ int HashTable::GetHash6(const std::string& value)
 
 HashTable::HashTable(const int size)
 {
-    int hsize = 1013;
+    const int hsize = 1013;
     for (int i = 0; i < hsize; i++)
     {
         std::vector<std::string> new_vector;
@@ -64,7 +64,7 @@ HashTable::HashTable(const int size)
 
 void HashTable::Add(const std::string& value)
 {
-    int hash = GetHash(value);
+    const int hash = GetHash(value);
     if (this->Has(value) == 0)
     {
         data_[hash].push_back(value);
@@ -73,7 +73,7 @@ void HashTable::Add(const std::string& value)
 
 void HashTable::Remove(const std::string& value)
 {
-    int hash = GetHash(value);
+    const int hash = GetHash(value);
     for (int i = 0; i < data_.size(); i++)
     {
         if (data_[hash][i] == value)
@@ -95,7 +95,7 @@ int HashTable::GetHash(const std::string& value) const
 
 bool HashTable::Has(const std::string& value) const
 {
-    int hash = GetHash(value);
+    const int hash = GetHash(value);
     for (int i = 0; i < data_[hash].size(); i++)
     {
         if (data_[hash][i] == value)

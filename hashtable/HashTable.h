@@ -3,15 +3,18 @@
 #include <vector>
 #include <string>
 
+
+int GetHash1(const std::string& value);
+int GetHash2(const std::string& value);
+int GetHash3(const std::string& value);
+int GetHash4(const std::string& value);
+int GetHash5(const std::string& value);
+int GetHash6(const std::string& value);
+
+
 class HashTable
 {
 public:
-    int GetHash1(const std::string& value);
-    int GetHash2(const std::string& value);
-    int GetHash3(const std::string& value);
-    int GetHash4(const std::string& value);
-    int GetHash5(const std::string& value);
-    int GetHash6(const std::string& value);
 
     HashTable(const int size);
 
@@ -22,7 +25,8 @@ public:
     
     const std::vector<std::vector<std::string>>& GetData() const;
     
-    size_t GetSize(const int key);
+    size_t GetSize();
+
 private:
     std::vector<std::vector<std::string>> data_;
 };
