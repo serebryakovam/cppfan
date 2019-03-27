@@ -3,22 +3,22 @@
 #include <vector>
 #include <string>
 
-int HashTable::GetHash1(const std::string& value)
+int GetHash1(const std::string& value)
 {
     return 1;
 }
 
-int HashTable::GetHash2(const std::string& value)
+int GetHash2(const std::string& value)
 {
     return value[0];
 }
 
-int HashTable::GetHash3(const std::string& value)
+int GetHash3(const std::string& value)
 {
     return value.size();
 }
 
-int HashTable::GetHash4(const std::string& value)
+int GetHash4(const std::string& value)
 {
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
@@ -28,7 +28,7 @@ int HashTable::GetHash4(const std::string& value)
     return hash;
 }
 
-int HashTable::GetHash5(const std::string& value)
+int GetHash5(const std::string& value)
 {
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
@@ -38,7 +38,7 @@ int HashTable::GetHash5(const std::string& value)
     return hash;
 }
 
-int HashTable::GetHash6(const std::string& value)
+int GetHash6(const std::string& value)
 {
     if (value.size() == 0)
     {
@@ -83,9 +83,9 @@ void HashTable::Remove(const std::string& value)
     }
 }
 
-size_t HashTable::GetSize(const int key)
+size_t HashTable::GetSize()
 {
-    return data_[key].size();
+    return data_.size();
 }
 
 int HashTable::GetHash(const std::string& value) const
