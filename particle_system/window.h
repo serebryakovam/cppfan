@@ -15,7 +15,7 @@ public:
     void Update(const float dt);
     void BeginDraw();
     void Draw(sf::Drawable& drawable_object);
-    void Window::Draw(ParticleSystem& particle_system);
+    void Draw(ParticleSystem& particle_system);
     void EndDraw();
 
     bool CheckIsDone();
