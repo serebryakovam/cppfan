@@ -29,8 +29,8 @@ void Particle::Update(const float dt)
         position_.x = radius_;
         velocity_.x = -velocity_.x / 2.0f;
     }
-
-    if (position_.x > WINDOW_SIZES.x)
+    
+    if (position_.x + radius_> WINDOW_SIZES.x)
     {
         position_.x = WINDOW_SIZES.x - radius_;
         velocity_.x = -velocity_.x / 2.0f;
@@ -41,7 +41,7 @@ void Particle::Update(const float dt)
         position_.y = radius_;
         velocity_.y = -velocity_.y / 2.0f;
     }
-    const float bottom_gap = 50.0f;
+    const float bottom_gap = 5.0f;
 
     if (position_.y + radius_ + bottom_gap > WINDOW_SIZES.y)
     {
