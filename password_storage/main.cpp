@@ -48,13 +48,6 @@ enum program_type
 
 int main()
 {
-    int user_choice = 0;
-    std::cin >> user_choice;
-
-    std::cout << "Enter 0 if you want to print the database." << std::endl;
-    std::cout << "Enter 1 if you want to get the password to the exact login" << std::endl;
-    std::cout << "Enter 2 if you want to change the password" << std::endl;
-
     const int pairs_number = 5;
     PasswordStorage password_storage(pairs_number);
 
@@ -82,8 +75,14 @@ int main()
     pair_5.login = "JorahMormont";
     pair_5.password = "IainGlen";
     password_storage.Add(pair_5);
+   
+    std::cout << "Enter 0 if you want to print the database." << std::endl;
+    std::cout << "Enter 1 if you want to get the password to the exact login" << std::endl;
+    std::cout << "Enter 2 if you want to change the password" << std::endl;
 
- 
+    int user_choice = 0;
+    std::cin >> user_choice;
+
     switch (user_choice)
     {
     case PRINT_THE_DATABASE:
