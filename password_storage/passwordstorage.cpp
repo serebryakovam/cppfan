@@ -5,12 +5,12 @@
 
 PasswordStorage::PasswordStorage(const int size) : hashtable_(size)
 {
-};
+}
 
-void PasswordStorage::PrintTheDatabase(const PasswordStorage& password_storage) const
+/*void PasswordStorage::PrintTheDatabase(const PasswordStorage& password_storage) const
 {
     std::cout << password_storage;
-};
+}*/
 
 void PasswordStorage::GetThePassword() const
 {
@@ -19,7 +19,7 @@ void PasswordStorage::GetThePassword() const
     std::cin >> login;
     if (hashtable_.Has(login) == true)
     {
-        int login_hash = hashtable_.GetHash(login);
+        const int login_hash = hashtable_.GetHash(login);
         std::cout << "Password: " << DecodeString(hashtable_.GetData()[login_hash][0].password) << std::endl;
     }
     else
@@ -27,19 +27,25 @@ void PasswordStorage::GetThePassword() const
         std::cout << "Soory,the login is incorrect." << std::endl;
     }
 
-};
+}
+
+int PasswordStorage::GetPasswordHash() const
+{
+    return password_hash;
+}
 
 void PasswordStorage::ChangePassword()
 {
     std::string new_password_;
     std::cin >> new_password_;
     password_hash = GetHashFromString(new_password_);
-};
+   
+}
 
 void PasswordStorage::Add(const PasswordStorageEntry& new_pair)
 {
     hashtable_.Add(new_pair);
-};
+}
 
 
 std::ostream& operator<<(std::ostream& out_stream, const PasswordStorage& storage)

@@ -1,5 +1,5 @@
 #include "passwordstorage.h"
-#include "HashTable.h"
+#include "hashtable.h"
 #include <iostream>
 
 
@@ -39,7 +39,7 @@ int GetHashFromString(const std::string& value)
 }
 
 
-enum program_type
+enum class program_type
 {
     PRINT_THE_DATABASE = 0,
     GET_THE_PASSWORD = 1,
@@ -76,30 +76,43 @@ int main()
     pair_5.password = "IainGlen";
     password_storage.Add(pair_5);
    
-    std::cout << "Enter 0 if you want to print the database." << std::endl;
-    std::cout << "Enter 1 if you want to get the password to the exact login" << std::endl;
-    std::cout << "Enter 2 if you want to change the password" << std::endl;
+    std::cout << "Enter the password:" << std::endl;
+    std::string password;
+    std::cin >> password;
 
-    int user_choice = 0;
-    std::cin >> user_choice;
-
-    switch (user_choice)
+    if (GetHashFromString(password) == password_storage.GetPasswordHash())
     {
-    case PRINT_THE_DATABASE:
-        password_storage.PrintTheDatabase(password_storage);
-        break;
-   case GET_THE_PASSWORD:
-        password_storage.GetThePassword();
-        break;
-   case CHANGE_PASSWORD:
-        password_storage.ChangePassword();
-        break;
-   default:
-       std::cout << "Unknown type of the program.\n";
-       std::cout << "Your input: " << user_choice << ". ";
-       std::cout << "But you should enter 0, 1 or 2.\n";
-       std::cout << "Exiting ..." << std::endl;
+        std::cout << "Enter 0 if you want to print the database." << std::endl;
+        std::cout << "Enter 1 if you want to get the password to the exact login" << std::endl;
+        std::cout << "Enter 2 if you want to change the password" << std::endl;
+
+        int user_choice = 0;
+        std::cin >> user_choice;
+
+        switch (user_choice)
+        {
+        case program_type::PRINT_THE_DATABASE:
+            std::cout << password_storage;
+            break;
+        case program_type::GET_THE_PASSWORD:
+            password_storage.GetThePassword();
+            break;
+        case program_type::CHANGE_PASSWORD:
+            password_storage.ChangePassword();
+            break;
+        default:
+            std::cout << "Unknown type of the program.\n";
+            std::cout << "Your input: "<< user_choice << ". ";
+            std::cout << "But you should enter 0, 1 or 2.\n";
+            std::cout << "Exiting ..." << std::endl;
+        }
     }
+    else
+    {
+        std::cout << "incorrect password" << std::endl;
+        std::cout << GetHashFromString(password) << std::endl;
+    }
+
 }
 
 
